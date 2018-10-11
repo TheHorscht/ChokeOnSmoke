@@ -1,24 +1,5 @@
 local _ = require "name-uniquifier"
 
--- Create an item that let's us place our furnace
-data:extend{
-    {
-        type = "item",
-        name = _("furnace"),
-        icon = "__base__/graphics/icons/steel-furnace.png",
-        icon_size = 32,
-        flags = {"goes-to-quickbar"},
-        subgroup = "smelting-machine",
-        order = "b[steel-furnace]",
-        place_result = _("furnace"),
-        stack_size = 50
-    },
-    {
-        name = _("fuel"),
-        type = "recipe-category"
-    },
-}
-
 -- Define a new fluid type that never gets used except as an icon for ALT mode,
 -- to show that "pollution" is being "crafted"
 local pollution = table.deepcopy(data.raw.fluid.steam)

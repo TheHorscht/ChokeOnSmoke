@@ -186,3 +186,22 @@ data:extend{
     fast_replaceable_group = "furnace",
   }
 }
+
+-- Create an item that let's us place our furnace
+data:extend{
+  {
+      type = "item",
+      name = _("furnace"),
+      icon = "__base__/graphics/icons/steel-furnace.png",
+      icon_size = 32,
+      flags = {"goes-to-quickbar"},
+      subgroup = "smelting-machine",
+      order = "b[steel-furnace]",
+      place_result = _("furnace"),
+      stack_size = 50
+  },
+  {
+      name = _("fuel"),
+      type = "recipe-category"
+  },
+}
