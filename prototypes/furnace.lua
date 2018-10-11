@@ -26,7 +26,7 @@ data:extend{
     selection_box = {{-1.3, -1.5}, {1.3, 1.5}},
     crafting_categories = {_("fuel")},
     result_inventory_size = 0,
-    energy_usage = "500kW",
+    energy_usage = "250kW",
     crafting_speed = 2,
     source_inventory_size = 1,
     energy_source =
@@ -34,7 +34,7 @@ data:extend{
       type = "burner",
       fuel_category = "chemical",
       effectivity = 1.00,
-      emissions = 1.0,
+      emissions = 2.0,
       fuel_inventory_size = 1,
       smoke =
       {
