@@ -1,11 +1,13 @@
+local _ = require "name-uniquifier"
+
 data:extend{
   {
     type = "furnace",
-    name = "pollute-the-planet-furnace",
+    name = _("furnace"),
     icon = "__base__/graphics/icons/steel-furnace.png",
     icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = "pollute-the-planet-furnace"},
+    minable = {mining_time = 1, result = _("furnace")},
     max_health = 300,
     corpse = "medium-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -22,25 +24,25 @@ data:extend{
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    crafting_categories = {"smelting"},
+    crafting_categories = {_("fuel")},
     result_inventory_size = 0,
     energy_usage = "500kW",
     crafting_speed = 2,
-    source_inventory_size = 0,
+    source_inventory_size = 1,
     energy_source =
     {
       type = "burner",
       fuel_category = "chemical",
-      effectivity = 1,
-      emissions = 1.02,
+      effectivity = 1.00,
+      emissions = 1.0,
       fuel_inventory_size = 1,
       smoke =
       {
         {
           name = "smoke",
-          frequency = 20,
+          frequency = 50,
           position = {0.7, -1.2},
-          starting_vertical_speed = 0.28,
+          starting_vertical_speed = 0.2,
           starting_frame_deviation = 60
         }
       }
@@ -178,32 +180,40 @@ data:extend{
       }
     },
     fast_replaceable_group = "furnace",
-    fluid_boxes =
-    {
-      {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {0, -2} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      off_when_no_fluid_recipe = false
-    },
   }
 }
 
 data:extend{
     {
     type = "item",
-    name = "pollute-the-planet-furnace",
+    name = _("furnace"),
     icon = "__base__/graphics/icons/steel-furnace.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "smelting-machine",
     order = "b[steel-furnace]",
-    place_result = "pollute-the-planet-furnace",
+    place_result = _("furnace"),
     stack_size = 50
     }
+}
+
+data:extend{
+  {
+    name = _("fuel"),
+    type = "recipe-category"
+  },
+}
+
+data:extend{
+  {
+    type = "recipe",
+    name = _("placeholder"),
+    category = _("fuel"),
+    energy_required = 1,
+    hide_from_stats = true,
+    hidden = true,
+    ingredients = {{"coal", 1}},
+    result = "iron-plate",
+    result_count = 0
+  }
 }
