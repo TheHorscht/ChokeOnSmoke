@@ -1,27 +1,38 @@
+local _ = require "name-uniquifier"
+
 data:extend{
   {
       type = "technology",
-      name = "oil-burner",
+      name = _("furnace"),
       icon_size = 128,
-      icon = "__base__/graphics/entity/steel-furnace/hr-steel-furnace.png",
+      icon = "__choke-on-smoke__/graphics/technology/furnace.png",
       effects =
       {
         {
-          type = "nothing"
+          type  = "unlock-recipe",
+          recipe = _("furnace")
         }
       },
-      prerequisites = {"military-2", "advanced-electronics"},
       unit =
       {
-        count_formula = "L*200",
         ingredients = {
           {"science-pack-1", 1},
-          {"science-pack-2", 1},
-          {"science-pack-3", 1},
-          {"military-science-pack", 1},
+          {"science-pack-2", 1}
         },
-        time = 30
+        time = 30,
+        count = 200
       },
       order = "-aaa"
+  },
+  {
+    type = "recipe",
+    name = _("furnace"),
+    result = _("furnace"),
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+      {"steel-plate", 50},
+      {"stone-brick", 50},
+    },
   },
 }
