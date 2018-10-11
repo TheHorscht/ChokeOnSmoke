@@ -23,7 +23,7 @@ data:extend{
       }
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-1.3, -1.5}, {1.3, 1.5}},
     crafting_categories = {_("fuel")},
     result_inventory_size = 0,
     energy_usage = "500kW",
@@ -41,8 +41,8 @@ data:extend{
         {
           name = "smoke",
           frequency = 50,
-          position = {0.7, -1.2},
-          starting_vertical_speed = 0.2,
+          position = {1.05, -1.7},
+          starting_vertical_speed = 0.07,
           starting_frame_deviation = 60
         }
       }
@@ -57,7 +57,9 @@ data:extend{
           width = 205,
           height = 87,
           frame_count = 1,
-          shift = util.by_pixel(-1.5, 1.5),
+          shift = util.by_pixel(-1.5, 5.5),
+          apply_runtime_tint = true,
+          tint = {r = 1, g = 0.7, b = 0.7, a = 1},
           scale = 1.5,
           hr_version =
           {
@@ -66,7 +68,9 @@ data:extend{
             width = 171,
             height = 174,
             frame_count = 1,
-            shift = util.by_pixel(-1.25, 1),
+            shift = util.by_pixel(-1.25, 5),
+            apply_runtime_tint = true,
+            tint = {r = 1, g = 0.7, b = 0.7, a = 1},
             scale = 0.75
           }
         },
@@ -204,16 +208,36 @@ data:extend{
   },
 }
 
+local pollution = table.deepcopy(data.raw.fluid.steam)
+pollution.name = _("pollution")
+pollution.icon = "__choke-on-smoke__/graphics/icons/fluid/pollution.png"
+pollution.icon_size = 32
+data:extend{pollution}
+
 data:extend{
   {
     type = "recipe",
-    name = _("placeholder"),
+    name = _("coal-to-smoke"),
     category = _("fuel"),
-    energy_required = 1,
+    energy_required = 5,
+    emissions_multiplier = 1,
     hide_from_stats = true,
     hidden = true,
     ingredients = {{"coal", 1}},
-    result = "iron-plate",
-    result_count = 0
+    results = {{ type="fluid", name=_("pollution"), amount=0}}
+  }
+}
+
+data:extend{
+  {
+    type = "recipe",
+    name = _("solid-fuel-to-smoke"),
+    category = _("fuel"),
+    energy_required = 5,
+    emissions_multiplier = 2,
+    hide_from_stats = true,
+    hidden = true,
+    ingredients = {{"solid-fuel", 1}},
+    results = {{ type="fluid", name=_("pollution"), amount=0}}
   }
 }
