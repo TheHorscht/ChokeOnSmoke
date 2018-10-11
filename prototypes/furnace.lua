@@ -1,5 +1,7 @@
 local _ = require "name-uniquifier"
 
+local tint = {r = 1, g = 0.7, b = 0.7, a = 1}
+
 data:extend{
   {
     type = "furnace",
@@ -59,7 +61,7 @@ data:extend{
           frame_count = 1,
           shift = util.by_pixel(90.5, 3.5),
           apply_runtime_tint = true,
-          tint = {r = 1, g = 0.7, b = 0.7, a = 1},
+          tint = tint,
           scale = 1.5,
           hr_version =
           {
@@ -70,7 +72,7 @@ data:extend{
             frame_count = 1,
             shift = util.by_pixel(-1.25, 5),
             apply_runtime_tint = true,
-            tint = {r = 1, g = 0.7, b = 0.7, a = 1},
+            tint = tint,
             scale = 0.75
           }
         },
@@ -195,8 +197,13 @@ data:extend{
   {
       type = "item",
       name = _("furnace"),
-      icon = "__base__/graphics/icons/steel-furnace.png",
-      icon_size = 32,
+      icons = {
+        {
+          icon = "__base__/graphics/icons/steel-furnace.png",
+          icon_size = 32,
+          tint = tint,
+        }
+      },
       flags = {"goes-to-quickbar"},
       subgroup = "smelting-machine",
       order = "b[steel-furnace]",
