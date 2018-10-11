@@ -57,7 +57,7 @@ data:extend{
           width = 205,
           height = 87,
           frame_count = 1,
-          shift = util.by_pixel(-1.5, 5.5),
+          shift = util.by_pixel(90.5, 3.5),
           apply_runtime_tint = true,
           tint = {r = 1, g = 0.7, b = 0.7, a = 1},
           scale = 1.5,
@@ -81,7 +81,7 @@ data:extend{
           height = 43,
           frame_count = 1,
           draw_as_shadow = true,
-          shift = util.by_pixel(39.5, 11.5),
+          shift = util.by_pixel(60.5, 11.5),
           scale = 1.5,
           hr_version =
           {
@@ -115,6 +115,7 @@ data:extend{
           axially_symmetrical = false,
           direction_count = 1,
           shift = util.by_pixel(-0.5, 6),
+          scale = 1.5,
           hr_version =
           {
             filename = "__base__/graphics/entity/steel-furnace/hr-steel-furnace-fire.png",
@@ -166,6 +167,7 @@ data:extend{
           axially_symmetrical = false,
           direction_count = 1,
           shift = util.by_pixel(0, -4.5),
+          scale = 1.5,
           blend_mode = "additive",
           hr_version =
           {
