@@ -126,7 +126,7 @@ data:extend{
             axially_symmetrical = false,
             direction_count = 1,
             shift = util.by_pixel(-0.75, 5.75),
-            scale = 0.5
+            scale = 0.75
           }
         },
         light = {intensity = 1, size = 1, color = {r = 1.0, g = 1.0, b = 1.0}}
@@ -145,7 +145,8 @@ data:extend{
           height = 43,
           frame_count = 1,
           shift = {0.03125, 0.640625},
-          blend_mode = "additive"
+          blend_mode = "additive",
+          scale = 1.5
         }
       },
       {
@@ -178,7 +179,7 @@ data:extend{
             direction_count = 1,
             shift = util.by_pixel(0, -4.25),
             blend_mode = "additive",
-            scale = 0.5
+            scale = 0.75
           }
         }
       }
