@@ -91,7 +91,7 @@ data:extend{
             height = 85,
             frame_count = 1,
             draw_as_shadow = true,
-            shift = util.by_pixel(39.25, 11.25),
+            shift = util.by_pixel(60, 15),
             scale = 0.75
           }
         }
