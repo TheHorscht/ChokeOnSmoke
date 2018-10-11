@@ -34,7 +34,7 @@ data:extend{
       type = "burner",
       fuel_category = "chemical",
       effectivity = 1.00,
-      emissions = 2.0,
+      emissions = 2.0 * settings.startup[_("multiplier")].value,
       fuel_inventory_size = 1,
       smoke =
       {
