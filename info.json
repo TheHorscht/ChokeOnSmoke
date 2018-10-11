@@ -1,0 +1,11 @@
+{
+    "name": "pollute-the-planet",
+    "version": "0.1.0",
+    "title": "Pollute the Planet",
+    "author": "TheHorscht",
+    "contact": "realhorscht@gmail.com",
+    "homepage": "https://github.com/TheHorscht/",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16"],
+    "description": "Show those aliens what humanity is capable of! Choke on smoke aliens!"
+}
