@@ -6,6 +6,7 @@ data:extend{
       name = _("furnace"),
       icon_size = 128,
       icon = "__choke-on-smoke__/graphics/technology/furnace.png",
+      prerequisites = {"steel-processing"},
       effects =
       {
         {
