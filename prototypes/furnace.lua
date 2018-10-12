@@ -8,7 +8,7 @@ data:extend{
     name = _("furnace"),
     icon = "__base__/graphics/icons/steel-furnace.png",
     icon_size = 32,
-    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    flags = {"placeable-neutral", "placeable-player", "player-creation", "not-rotatable"},
     minable = {mining_time = 1, result = _("furnace")},
     max_health = 300,
     corpse = "medium-remnants",
@@ -42,7 +42,7 @@ data:extend{
       {
         {
           name = "smoke",
-          frequency = 50,
+          frequency = 20,
           position = {1.05, -1.7},
           starting_vertical_speed = 0.07,
           starting_frame_deviation = 60
