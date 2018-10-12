@@ -1,11 +1,11 @@
 {
     "name": "choke-on-smoke",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Choke on smoke",
     "author": "TheHorscht",
     "contact": "realhorscht@gmail.com",
     "homepage": "https://github.com/TheHorscht/",
     "factorio_version": "0.16",
     "dependencies": ["base >= 0.16"],
-    "description": "Show those aliens what humanity is capable of! Adds a furnace that let's you burn coal and solid fuel to generate pollution! Choke on smoke, suckers!"
+    "description": "Show those aliens what humanity is capable of! Adds a furnace that let's you burn fuel to generate pollution! Choke on smoke, suckers!"
 }
