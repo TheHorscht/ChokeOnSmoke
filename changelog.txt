@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 12. 10. 2018
+  Changes:
+    - Visual change only: Reduced smoke frequency to reduce processing power needed.
+  Bugfixes:
+    - Made furnace not-rotatable to fix smoke coming from wrong position.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 12. 10. 2018
+  Bugfixes:
+    - Corrected description.
